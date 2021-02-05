@@ -2,7 +2,6 @@ import com.google.gson.Gson;
 import utils.DescriptografarUtils;
 import utils.StringUtils;
 import utils.TxtUtils;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -15,9 +14,9 @@ public class Programa {
         String dadosJsonParaLeitura = getDadosJson();
         DadosJson dadosJson = new Gson().fromJson(dadosJsonParaLeitura, DadosJson.class);
         String frasseCriptografada = dadosJson.getEncryptedPhrase();
-        int chaveDeDeslocamento = dadosJson.getNumberOfDigits() * -1;
+        int chaveDeDeslocamento = dadosJson.getNumberOfDigits();
 
-        String diretorioFraseDescriptografada = dadosJson.getOutputDir()+ "/frases_descriptografada";
+        String diretorioFraseDescriptografada = dadosJson.getOutputDir()+ "/frase_descriptografada";
 
         String fraseCriptografadaSemNumeros = StringUtils.retirarCaracteresNumericos(frasseCriptografada);
 
