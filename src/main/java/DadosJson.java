@@ -18,4 +18,13 @@ public class DadosJson {
     public String getOutputDir() {
         return outputDir;
     }
+
+    @Override
+    public String toString() {
+        return "DadosJson{" +
+                "encryptedPhrase='" + encryptedPhrase + '\'' +
+                ", numberOfDigits=" + numberOfDigits +
+                ", outputDir='" + outputDir + '\'' +
+                '}';
+    }
 }
